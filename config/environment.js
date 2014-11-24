@@ -21,6 +21,16 @@ module.exports = function(environment) {
     cordova: {
       rebuildOnChange: false,
       emulate: false
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://api.parse.com",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
     }
   };
 
@@ -30,6 +40,15 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://api.parse.com",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
+    };
   }
 
   if (environment === 'test') {
