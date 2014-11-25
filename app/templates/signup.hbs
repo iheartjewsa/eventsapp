@@ -1,1 +1,39 @@
-Sign up :)
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Sign up</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    {{#if loggedIn}}
+      <div data-alert class="alert-box success radius">
+        <p>Successfully Signed Up.</p>
+        <p>{{username}} {{loginMessage}}</p>
+      </div>
+    {{else}}
+    <button>Signup with Facebook!...still to do</button>
+    <form>
+      <div>
+        <label for="username">Name</label>
+        {{input value=username id="username" placeholder="Enter a username..."}}
+      </div>
+      <div>
+        <label for="password">Password</label>
+        {{input value=password id="password" placeholder="Enter a username..."}}
+      </div>
+      <div>
+        <label for="email">Email</label>
+        {{input value=email id="email" placeholder="Enter your email..."}}
+      </div>
+      <div>
+        <button {{action 'signup'}}>Sign up!</button>
+      </div>
+    {{#if loginMessage}}
+      <div data-alert class="alert-box warning radius">
+        <p>{{loginMessage}}</p>
+      </div>
+    {{/if}}
+    </form>
+    {{/if}}
+  </div>
+</div>

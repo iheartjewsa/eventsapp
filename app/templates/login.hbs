@@ -1,1 +1,35 @@
-Login :)
+    <div class="row">
+      <div class="small-12 columns">
+        <h2>Login</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        {{#if loggedIn}}
+          <div class="alert-box success radius">
+            <p>Successfully Logged in.</p>
+            <p>{{username}} {{loginMessage}}</p>
+          </div>
+        {{else}}
+        <button>Login with Facebook!...still to do</button>
+          <form>
+            <div>
+              <label for="username">Name</label>
+              {{input value=username id="username" placeholder="Enter username..."}}
+            </div>
+            <div>
+              <label for="password">Password</label>
+              {{input value=password id="password" placeholder="Enter password..."}}
+            </div>
+            <div>
+              <button {{action 'parseLogin'}}>Login</button>
+            </div>
+            {{#if loginMessage}}
+              <div data-alert class="alert-box warning radius">
+                <p>{{loginMessage}}</p>
+              </div>
+            {{/if}}
+          </form>
+        {{/if}}
+      </div>
+    </div>
