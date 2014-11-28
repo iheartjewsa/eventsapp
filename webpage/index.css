@@ -1,0 +1,37 @@
+/* Insert CSS overrides here */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Insert mobile CSS overrides here */
+}
+
+.launch-event{
+  line-height: 1.5em;
+  font-size: 16px;
+  margin: 0 0 30px;
+  width: 82%;
+  float: right;
+}
+
+.contact-details{
+  font-style: italic;
+  font-size: 12px;
+  padding: 0 0 8px;
+  float: right;
+  width: 100%;
+}
+
+.app-coming-soon-box {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+a.uiMediaThumbImg {
+  width: 206px;
+  height: 206px;
+  background-position: 50% 25%;
+  background-size: cover;
+  display: block;
+  float: left;
+  margin: 3px;
+}
