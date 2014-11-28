@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
         function(user){
           controller.set('user', user);
           controller.set('loggedIn', true);
-          controller.set('loginMessage', "Welcome!");
+          controller.set('loginMessage', "Thanks for signing up!");
         },
         function(error){
           controller.set('loggedIn', false);

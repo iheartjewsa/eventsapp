@@ -21,6 +21,7 @@ export default Ember.Controller.extend({
           controller.set('user', user);
           controller.set('loggedIn', true);
           controller.set('loginMessage', "Welcome!");
+          controller.transitionToRoute('events');
         },
         function(error){
           controller.set('loggedIn', false);
