@@ -6,7 +6,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     return this.get('store').find('event');
   },
   afterModel: function(){
-    var userID = this.get('model.id');
     this.get('store').find('userEvent', {
       where: {
         parseUser: {
