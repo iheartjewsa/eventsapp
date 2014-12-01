@@ -1,34 +1,12 @@
 import Ember from 'ember';
+import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(LoginControllerMixin, {
+  authenticator: 'authenticator:parse',
   user: null,
-  username: null,
-  password: null,
   accessToken: null,
   facebookUid: null,
-  loggedIn: false,
-  loginMessage: null,
   actions: {
-    parseLogin: function(){
-      var controller = this,
-          ParseUser = this.store.modelFor('parse-user'),
-          data = {
-            username: this.get('username'),
-            password: this.get('password')
-          };
-      ParseUser.login(this.store, data).then(
-        function(user){
-          controller.set('user', user);
-          controller.set('loggedIn', true);
-          controller.set('loginMessage', "Welcome!");
-          controller.transitionToRoute('events');
-        },
-        function(error){
-          controller.set('loggedIn', false);
-          controller.set('loginMessage', error.message || error.error);
-        }
-      );
-    },
     facebookLogin: function(){
       var controller = this,
           ParseUser = this.store.modelFor('parse-user'),

@@ -5,7 +5,7 @@ import {
 
 moduleForModel('parse-user', 'ParseUser', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:user-event', 'model:event']
 });
 
 test('it exists', function() {

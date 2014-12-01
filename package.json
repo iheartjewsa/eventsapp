@@ -31,6 +31,7 @@
     "express": "^4.8.5",
     "glob": "^4.0.5",
     "ember-cli-cordova": "0.0.13",
-    "liquid-fire": "^0.15.0"
+    "liquid-fire": "^0.15.0",
+    "ember-cli-simple-auth": "^0.7.1"
   }
 }

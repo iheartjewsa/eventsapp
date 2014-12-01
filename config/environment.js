@@ -23,6 +23,11 @@ module.exports = function(environment) {
       emulate: false
     },
 
+    'simple-auth': {
+      crossOriginWhitelist: ['https://api.parse.com'],
+      routeAfterAuthentication: 'events'
+    },
+
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self'",
