@@ -5,5 +5,29 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model: function(params){
     var model = this.get('store').find('event', params.event_id);
     return model;
+  },
+  afterModel: function(model){
+    this.get('store').find('userEvent', {
+      where: {
+        parseUser: {
+          "__type":  "Pointer",
+          "className": "_User",
+          "objectId": this.get('session.user.id')
+        },
+        event: {
+          "__type":  "Pointer",
+          "className": "Event",
+          "objectId": model.get('id')
+        }
+      }
+    });
+  },
+  actions: {
+    join: function(){
+
+    },
+    leave: function(){
+
+    }
   }
 });
