@@ -9,7 +9,7 @@ export default Ember.ObjectController.extend({
   }.property('currentUserEvents.[]'),
   actions: {
     join: function(){
-      if(!this.get('model.firstCurrentUserEvent')){
+      if(!this.get('firstCurrentUserEvent')){
         var userEvent = this.store.createRecord('userEvent', {
           event: this.get('model'),
           parseUser: this.get('store').getById('parseUser', this.get('session.user.id')),
