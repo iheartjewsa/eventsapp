@@ -7,7 +7,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     return model;
   },
   afterModel: function(model){
-    model.set('currentUserEvents', this.get('store').find('userEvent', {
+    this.get('store').find('userEvent', {
       where: {
         parseUser: {
           "__type":  "Pointer",
@@ -20,6 +20,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           "objectId": model.get('id')
         }
       }
-    }));
+    });
   }
 });
