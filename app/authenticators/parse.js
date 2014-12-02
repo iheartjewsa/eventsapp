@@ -3,8 +3,9 @@ import Ember from 'ember';
 
 export default Base.extend({
   restore: function(data) {
-    console.log('to');
-    //TODO
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+        resolve(data);
+      });
   },
   authenticate: function(options) {
     var ParseUser = this.store.modelFor('parse-user');

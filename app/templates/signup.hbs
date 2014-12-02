@@ -5,12 +5,6 @@
 </div>
 <div class="row">
   <div class="small-12 columns">
-    {{#if loggedIn}}
-      <div data-alert class="alert-box success radius">
-        <p>Successfully Signed Up.</p>
-        <p>{{username}} {{loginMessage}}</p>
-      </div>
-    {{else}}
     <button>Signup with Facebook!...still to do</button>
     <form>
       <div>
@@ -28,12 +22,11 @@
       <div>
         <button {{action 'signup'}}>Sign up!</button>
       </div>
-    {{#if loginMessage}}
+    {{#if signupMessage}}
       <div data-alert class="alert-box warning radius">
-        <p>{{loginMessage}}</p>
+        <p>{{signupMessage}}</p>
       </div>
     {{/if}}
     </form>
-    {{/if}}
   </div>
 </div>
