@@ -1,3 +1,7 @@
 Hi, this event is: {{name}}
-<button {{action 'join'}}>Join!</button>
-<button {{action 'leave'}}>Leave!</button>
+{{#if firstCurrentUserEvent.attending}}
+  You are attending!
+  <button {{action 'leave'}}>Leave!</button>
+{{else}}
+  <button {{action 'join'}}>Join!</button>
+{{/if}}
