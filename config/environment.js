@@ -25,7 +25,8 @@ module.exports = function(environment) {
 
     'simple-auth': {
       crossOriginWhitelist: ['https://api.parse.com'],
-      routeAfterAuthentication: 'events'
+      routeAfterAuthentication: 'events',
+      routeIfAlreadyAuthenticated: 'events'
     },
 
     contentSecurityPolicy: {
