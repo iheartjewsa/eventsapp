@@ -5,7 +5,7 @@ import {
 
 moduleFor('controller:events', 'EventsController', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+   needs: ['controller:event']
 });
 
 // Replace this with your real tests.

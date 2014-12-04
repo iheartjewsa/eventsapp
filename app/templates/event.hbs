@@ -1,6 +1,10 @@
-Hi, this event is: {{name}}
+{{#link-to 'events'}}Back{{/link-to}}
+<br/>
+Hi, this event is: {{name}}<br/>
+
 {{#if firstCurrentUserEvent.attending}}
-  You are attending!
+  You are attending!<br/>
+
   <button {{action 'leave'}}>Leave!</button>
 {{else}}
   <button {{action 'join'}}>Join!</button>

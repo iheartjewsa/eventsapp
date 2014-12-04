@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default Base.extend({
   restore: function(data) {
-    this.store.push('parseUser', data.user)
+    this.store.push('parseUser', data.user);
     return new Ember.RSVP.Promise(function(resolve, reject) {
         resolve(data);
       });
