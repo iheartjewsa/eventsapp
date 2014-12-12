@@ -2,5 +2,6 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  userEvents: DS.hasMany('user-event')
+  userEvents: DS.hasMany('user-event'),
+  comments: DS.hasMany('comment')
 });

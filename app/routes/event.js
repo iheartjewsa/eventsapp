@@ -7,7 +7,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     return model;
   },
   afterModel: function(model){
-    this.get('store').find('userEvent', {
+    var currentUserEvent = this.get('store').find('userEvent', {
       where: {
         parseUser: {
           "__type":  "Pointer",
@@ -21,10 +21,32 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         }
       }
     });
+    var eventComments = this.get('store').find('comment', {
+      where: {
+        event: {
+          "__type":  "Pointer",
+          "className": "Event",
+          "objectId": model.get('id')
+        }
+      },
+      include: 'parseUser'
+    });
+    return Ember.RSVP.all([currentUserEvent, eventComments]).then(function(results){
+      return results[1].store.find('parseUser', {
+        where: {
+          objectId: {
+            '$in': results[1].mapBy('data.parseUser.id').uniq()
+          }
+        }
+      });
+    });
   },
   actions: {
     saveUserEvent: function(userEvent){
       userEvent.save();
+    },
+    saveComment: function(comment){
+      comment.save();
     }
   }
 });

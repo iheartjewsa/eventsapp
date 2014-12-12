@@ -28,6 +28,15 @@ export default Ember.ObjectController.extend({
       userEvent.set('attending', false);
       this.send('saveUserEvent', userEvent);
       return false;
+    },
+    comment: function(){
+      var commentText = this.get('commentText');
+      var comment = this.store.createRecord('comment',{
+        event: this.get('model'),
+        parseUser: this.get('store').getById('parseUser', this.get('session.user.id')),
+        text: commentText
+      });
+      this.send('saveComment', comment);
     }
   }
 });

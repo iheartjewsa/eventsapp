@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('parse-user', 'ParseUser', {
+moduleForModel('comment', 'Comment', {
   // Specify the other units that are required for this test.
-  needs: ['model:user-event', 'model:event','model:comment']
+  needs: ['model:parse-user', 'model:event', 'model:user-event']
 });
 
 test('it exists', function() {
