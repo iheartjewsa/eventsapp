@@ -1,1 +1,22 @@
-{{outlet}}
+<section id='header'>
+  <header>
+    <span class='image logo'><img src='images/logo.jpg' alt=''></span>
+    <h1 id='logo'><a>i heart jew</a></h1>
+    <p>the jewish network</p>
+  </header>
+  <nav id='nav'>
+    <ul>
+      <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+      <li>{{#link-to 'events'}}Events{{/link-to}}</li>
+    </ul>
+  </nav>
+  <footer>
+    <ul class='icons'>
+      <li><a href='#' class='icon fa-facebook'><span class='label'>Facebook</span></a></li>
+      <li><a href='#' class='icon fa-envelope'><span class='label'>Email</span></a></li>
+    </ul>
+  </footer>
+</section>
+<section id='wrapper'>
+  {{outlet}}
+</section>
