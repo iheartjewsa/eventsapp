@@ -1,11 +1,16 @@
+<ul class='event-list'>
 {{#each}}
-  {{#link-to 'event' this}}{{name}}{{/link-to}}
-  {{#if session.content.user}}
-    {{#if firstCurrentUserEvent.attending}}
-      <button {{action 'leave'}}>Leave!</button>
-    {{else}}
-      <button {{action 'join'}}>Join!</button>
-    {{/if}}
-  {{/if}}
-<br/>
+    {{#link-to 'event' this}}
+      <li>
+        {{name}}
+        {{#if session.content.user}}
+          {{#if firstCurrentUserEvent.attending}}
+            <button {{action 'leave'}} class='list-join-leave-button'>Leave!</button>
+          {{else}}
+            <button {{action 'join'}} class='list-join-leave-button'>Join!</button>
+          {{/if}}
+        {{/if}}
+      </li>
+    {{/link-to}}
 {{/each}}
+</ul>
