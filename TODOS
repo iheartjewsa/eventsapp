@@ -1,0 +1,23 @@
+make welcome page nicer for logged in and logged out users
+fix login/singup flows, maybe put in modal
+improve style/layout of events page, and display extra attributes like place and time in a list
+improve style/layout of event page
+add attributes to event, like time/place...
+add security to parse for:
+  events: read only by everyone
+  event: read only by everyone
+  userevent: read only by user only, no one else
+  eventComments: read only by everyone
+  userevent: create/change only for/by user for themself
+  eventcomment: create/edit/delete only for user themself
+make it nice on mobile size too, check all routes
+fix facebook/email links
+look into backup type stuff
+clear data store and add real events
+email current mail list with event and signup info
+
+///
+photos
+notifications
+....check more on paper
+...cordova/app store
