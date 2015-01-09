@@ -2,20 +2,29 @@
 <br/>
 Hi, this event is: {{name}}<br/>
 
-{{#if firstCurrentUserEvent.attending}}
-  You are attending!<br/>
+{{#if session.content.user}}
 
-  <button {{action 'leave'}}>Leave!</button>
+  {{#if firstCurrentUserEvent.attending}}
+    You are attending!<br/>
+
+    <button {{action 'leave'}}>Leave!</button>
+  {{else}}
+    <button {{action 'join'}}>Join!</button>
+  {{/if}}
+
+  Wanna comment?
+  {{textarea value=commentText rows="6"}}
+  <button {{action 'comment'}}>Comment</button>
+  <br/>
+
 {{else}}
-  <button {{action 'join'}}>Join!</button>
+  You must be logged in to join or comment: <button>Login or Signup</button>
+  <br/>
 {{/if}}
-<br/>
-Wanna comment?
-{{textarea value=commentText rows="6"}}
-<button {{action 'comment'}}>Comment</button>
+
 <br/>
 
-Other people's comments:<br/>
+Comments:<br/>
 {{#each comment in comments}}
 Comment by {{comment.parseUser.username}}: {{comment.text}} <br/>
 {{/each}}

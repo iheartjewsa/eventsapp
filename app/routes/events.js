@@ -1,24 +1,28 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
+export default Ember.Route.extend({
   model: function(){
     return this.get('store').find('event');
   },
   afterModel: function(resolvedModel, transition, queryParams){
-    return this.get('store').find('userEvent', {
-      where: {
-        parseUser: {
-          "__type":  "Pointer",
-          "className": "_User",
-          "objectId": this.get('session.user.id')
+    if (this.get('session.content.user') !== undefined){
+      return this.get('store').find('userEvent', {
+        where: {
+          parseUser: {
+            "__type":  "Pointer",
+            "className": "_User",
+            "objectId": this.get('session.user.id')
+          }
         }
-      }
-    });
+      });
+    }
   },
   setupController: function(controller, model){
     controller.set('model', model);
-    controller.resetEventGroups();
+    if (this.get('session.content.user') !== undefined){
+      controller.resetEventGroups();
+    }
   },
   actions:{
     saveUserEvent: function(userEvent){

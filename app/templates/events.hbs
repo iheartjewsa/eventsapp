@@ -2,46 +2,51 @@
   No events at the moment! <br/>
 {{/unless}}
 
-{{#if currentUserNotIndicatedEvents}}
-     <br/>
+{{#if session.content.user}}
 
-  New events: <br/>
-  {{#each currentUserNotIndicatedEvents}}
-    {{#link-to 'event' this}}{{name}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
-  <button {{action 'leave'}}>Leave!</button>
+  {{#if currentUserNotIndicatedEvents}}
+    New events: <br/>
+    {{#each currentUserNotIndicatedEvents}}
+      {{#link-to 'event' this}}{{name}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
+    <button {{action 'leave'}}>Leave!</button>
+  {{else}}
+    <button {{action 'join'}}>Join!</button>
+  {{/if}}
+
+       <br/>
+    {{/each}}
+  {{/if}}
+       <br/>
+
+  {{#if currentUserAttendingEvents}}
+    Events you're going to: <br/>
+    {{#each currentUserAttendingEvents}}
+      {{#link-to 'event' this}}{{name}} {{firstCurrentUserEvent.attending}} {{um}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
+    <button {{action 'leave'}}>Leave!</button>
+  {{else}}
+    <button {{action 'join'}}>Join!</button>
+  {{/if}}
+
+       <br/>
+    {{/each}}
+  {{/if}}
+       <br/>
+
+  {{#if currentUserNotAttendingEvents}}
+    Events you're not going to: <br/>
+    {{#each currentUserNotAttendingEvents}}
+      {{#link-to 'event' this}}{{name}} {{firstCurrentUserEvent.attending}} {{um}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
+    <button {{action 'leave'}}>Leave!</button>
+  {{else}}
+    <button {{action 'join'}}>Join!</button>
+  {{/if}}
+
+       <br/>
+    {{/each}}
+  {{/if}}
+
 {{else}}
-  <button {{action 'join'}}>Join!</button>
-{{/if}}
-
-     <br/>
+  {{#each}}
+    {{#link-to 'event' this}}{{name}}{{/link-to}}<br/>
   {{/each}}
 {{/if}}
-     <br/>
-
-{{#if currentUserAttendingEvents}}
-  Events you're going to: <br/>
-  {{#each currentUserAttendingEvents}}
-    {{#link-to 'event' this}}{{name}} {{firstCurrentUserEvent.attending}} {{um}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
-  <button {{action 'leave'}}>Leave!</button>
-{{else}}
-  <button {{action 'join'}}>Join!</button>
-{{/if}}
-
-     <br/>
-  {{/each}}
-{{/if}}
-     <br/>
-
-{{#if currentUserNotAttendingEvents}}
-  Events you're not going to: <br/>
-  {{#each currentUserNotAttendingEvents}}
-    {{#link-to 'event' this}}{{name}} {{firstCurrentUserEvent.attending}} {{um}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
-  <button {{action 'leave'}}>Leave!</button>
-{{else}}
-  <button {{action 'join'}}>Join!</button>
-{{/if}}
-
-     <br/>
-  {{/each}}
-{{/if}}
-{{erm}}
