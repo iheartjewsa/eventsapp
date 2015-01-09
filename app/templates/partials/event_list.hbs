@@ -1,0 +1,11 @@
+{{#each}}
+  {{#link-to 'event' this}}{{name}}{{/link-to}}
+  {{#if session.content.user}}
+    {{#if firstCurrentUserEvent.attending}}
+      <button {{action 'leave'}}>Leave!</button>
+    {{else}}
+      <button {{action 'join'}}>Join!</button>
+    {{/if}}
+  {{/if}}
+<br/>
+{{/each}}

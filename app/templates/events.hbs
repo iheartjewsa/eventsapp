@@ -3,50 +3,31 @@
 {{/unless}}
 
 {{#if session.content.user}}
-
   {{#if currentUserNotIndicatedEvents}}
     New events: <br/>
-    {{#each currentUserNotIndicatedEvents}}
-      {{#link-to 'event' this}}{{name}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
-    <button {{action 'leave'}}>Leave!</button>
-  {{else}}
-    <button {{action 'join'}}>Join!</button>
+    {{#with currentUserNotIndicatedEvents}}
+      {{partial 'partials/event-list'}}
+    {{/with}}
   {{/if}}
 
-       <br/>
-    {{/each}}
-  {{/if}}
-       <br/>
+    <br/>
 
   {{#if currentUserAttendingEvents}}
     Events you're going to: <br/>
-    {{#each currentUserAttendingEvents}}
-      {{#link-to 'event' this}}{{name}} {{firstCurrentUserEvent.attending}} {{um}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
-    <button {{action 'leave'}}>Leave!</button>
-  {{else}}
-    <button {{action 'join'}}>Join!</button>
+    {{#with currentUserAttendingEvents}}
+      {{partial 'partials/event-list'}}
+    {{/with}}
   {{/if}}
 
-       <br/>
-    {{/each}}
-  {{/if}}
-       <br/>
+  <br/>
 
   {{#if currentUserNotAttendingEvents}}
     Events you're not going to: <br/>
-    {{#each currentUserNotAttendingEvents}}
-      {{#link-to 'event' this}}{{name}} {{firstCurrentUserEvent.attending}} {{um}}{{/link-to}}{{#if firstCurrentUserEvent.attending}}
-    <button {{action 'leave'}}>Leave!</button>
-  {{else}}
-    <button {{action 'join'}}>Join!</button>
-  {{/if}}
-
-       <br/>
-    {{/each}}
+    {{#with currentUserNotAttendingEvents}}
+      {{partial 'partials/event-list'}}
+    {{/with}}
   {{/if}}
 
 {{else}}
-  {{#each}}
-    {{#link-to 'event' this}}{{name}}{{/link-to}}<br/>
-  {{/each}}
+  {{partial 'partials/event-list'}}
 {{/if}}

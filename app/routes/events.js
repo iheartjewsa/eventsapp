@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend({
   model: function(){
@@ -23,6 +22,7 @@ export default Ember.Route.extend({
     if (this.get('session.content.user') !== undefined){
       controller.resetEventGroups();
     }
+    controller.setTopUpcomingEvents();
   },
   actions:{
     saveUserEvent: function(userEvent){

@@ -1,4 +1,23 @@
-Welcome to iheartjew
-
-{{#link-to 'signup'}}Signup{{/link-to}}
-{{#link-to 'login'}}Login{{/link-to}}
+<header class="major">
+  <h2>iheartjew</h2>
+  <p>i heart jew is a new organization created for young Jewish young adults ages 20-35.</p>
+</header>
+<p>
+It aims to create a social framework for young adults to chill, connect and interact
+in a dynamic, vibey environment with a focus on creating relationships and uniting the
+Johannesburg community through events.
+</p>
+{{#unless session.content.user}}
+  <p>
+  {{#link-to 'signup'}}Signup{{/link-to}}<br/>
+  {{#link-to 'login'}}Login{{/link-to}}
+  </p>
+{{/unless}}
+<section id="upcoming-events">
+  {{#if topUpcomingEvents}}
+    Upcoming events: <br/>
+    {{#with topUpcomingEvents}}
+      {{partial 'partials/event-list'}}
+    {{/with}}
+  {{/if}}
+</section>
