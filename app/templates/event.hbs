@@ -18,7 +18,9 @@ Hi, this event is: {{name}}<br/>
   <br/>
 
 {{else}}
-  You must be logged in to join or comment: <button>Login or Signup</button>
+  You must be logged in to join the event or comment:
+  {{#link-to 'signup' class='signup-button'}}Signup{{/link-to}}
+  {{#link-to 'login' class='login-button'}}Login{{/link-to}}
   <br/>
 {{/if}}
 
