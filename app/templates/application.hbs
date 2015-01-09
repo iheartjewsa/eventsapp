@@ -14,6 +14,18 @@
       <li>{{#link-to 'events'}}Events{{/link-to}}</li>
     </ul>
   </nav>
+  <nav id='bottom-nav'>
+    <ul>
+      <li>
+        {{#if session.isAuthenticated}}
+          <a href='#' {{ action 'invalidateSession' }}>Logout</a>
+        {{else}}
+          {{#link-to 'login'}}Login{{/link-to}}
+          {{#link-to 'signup'}}Signup{{/link-to}}
+        {{/if}}
+      </li>
+    </ul>
+  </nav>
   <footer>
     <ul class='icons'>
       <li><a href='#' class='icon fa-facebook'><span class='label'>Facebook</span></a></li>

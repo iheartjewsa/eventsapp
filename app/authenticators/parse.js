@@ -27,6 +27,9 @@ export default Base.extend({
       });
   },
   invalidate: function(data) {
-    //TODO
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      data.user = undefined;
+      resolve();
+    });
   }
 });

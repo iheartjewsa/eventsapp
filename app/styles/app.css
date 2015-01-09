@@ -1005,19 +1005,23 @@ h2 {
           color: #b6e9dc;
         }
 
-    #header > nav ul {
+    #header > nav ul,
+    #header > bottom-nav ul,
+     {
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
-      #header > nav ul li {
+      #header > nav ul li,
+      #header > bottom-nav ul li {
         border-top: solid 2px #5ccfb0;
         display: block;
         padding: 0;
       }
 
-        #header > nav ul li a {
+        #header > nav ul li a,
+        #header > bottom-nav ul li a {
           -moz-transition: none;
           -webkit-transition: none;
           -o-transition: none;
@@ -1030,12 +1034,14 @@ h2 {
           text-decoration: none;
         }
 
-          #header > nav ul li a.active {
+          #header > nav ul li a.active,
+          #header > bottom-nav ul li a.active {
             background: #fff;
             color: #4acaa8 !important;
           }
 
-        #header > nav ul li:first-child {
+        #header > nav ul li:first-child,
+        #header > bottom-nav ul li:first-child {
           border-top: 0;
         }
 
