@@ -1,3 +1,6 @@
+improve mobile menu bar
+login with fb
+login/signup pages check
 add security to parse for:
   events: read only by everyone
   event: read only by everyone
@@ -5,11 +8,8 @@ add security to parse for:
   eventComments: read only by everyone
   userevent: create/change only for/by user for themself
   eventcomment: create/edit/delete only for user themself
-make it nice on mobile size too, check all routes
 look into backup type stuff
 make logo smaller pic
-login with fb
-login/signup pages check
 ....check more on paper
 
 do with adam:
