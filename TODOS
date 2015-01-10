@@ -1,4 +1,3 @@
-login/signup pages check
 add security to parse for:
   events: read only by everyone
   event: read only by everyone
@@ -7,18 +6,23 @@ add security to parse for:
   userevent: create/change only for/by user for themself
   eventcomment: create/edit/delete only for user themself
 make it nice on mobile size too, check all routes
-fix facebook/email links
-deploy!
 look into backup type stuff
-clear data store and add real events
-email current mail list with event and signup info
 make logo smaller pic
 login with fb
+login/signup pages check
+....check more on paper
 
-///
+do with adam:
+fix facebook/email links
+deploy!
+clear data store and add real events
+email current mail list with event and signup info
+
+do maybe, or after:
 photos
 notifications
-....check more on paper
 ...cordova/app store
 do something with past events
 check event sorting
+ajax save spinners
+loading/route spinners

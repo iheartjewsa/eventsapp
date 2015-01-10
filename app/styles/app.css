@@ -2,6 +2,12 @@ html, body {
   margin: 0px;
 }
 
+#header {
+  width: 25%;
+  min-width: 15em;
+  min-height: 768px;
+}
+
 .logo img{
   margin: auto;
   width: 40%;
@@ -1021,7 +1027,6 @@ button:hover {
     position: fixed;
     text-align: center;
     top: 0;
-    width: 23em;
     right: 0;
   }
 
