@@ -1,30 +1,24 @@
 {{#unless model}}
-  No events at the moment! <br/>
+  No events at the moment!
 {{/unless}}
 
 {{#if session.content.user}}
   {{#if currentUserNotIndicatedEvents}}
-  <p>
     <h4>New events:</h4>
-  </p>
     {{#with currentUserNotIndicatedEvents}}
       {{partial 'partials/event-list'}}
     {{/with}}
   {{/if}}
 
   {{#if currentUserAttendingEvents}}
-  <p>
     <h4>Events you're going to:</h4>
-  </p>
     {{#with currentUserAttendingEvents}}
       {{partial 'partials/event-list'}}
     {{/with}}
   {{/if}}
 
   {{#if currentUserNotAttendingEvents}}
-  <p>
     <h4>Events you're not going to:</h4>
-  </p>
     {{#with currentUserNotAttendingEvents}}
       {{partial 'partials/event-list'}}
     {{/with}}

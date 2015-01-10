@@ -41,6 +41,7 @@ html, body {
     width: 94%;
     padding: 0px;
     margin-bottom: 100px;
+    margin-top: 15px;
   }
 
 }
@@ -137,6 +138,8 @@ button:hover {
   display: block;
   text-decoration: none;
   margin-bottom: 10px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 .event-list > a > li:hover {
