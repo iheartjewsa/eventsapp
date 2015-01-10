@@ -36,3 +36,23 @@
 <section id='wrapper' class="container">
   {{outlet}}
 </section>
+<section id='mobile-footer' >
+  <nav id='mobile-nav'>
+    <ul>
+      <li>{{#link-to 'welcome'}}Welcome{{/link-to}}</li>
+      <li>{{#link-to 'events'}}Events{{/link-to}}</li>
+      {{#if session.isAuthenticated}}
+        <li>
+          <a href='#' {{ action 'invalidateSession' }}>Logout</a>
+        </li>
+      {{else}}
+        <li>
+          {{#link-to 'signup'}}Signup{{/link-to}}
+        </li>
+        <li>
+          {{#link-to 'login'}}Login{{/link-to}}
+        </li>
+      {{/if}}
+    </ul>
+  </nav>
+</section>
