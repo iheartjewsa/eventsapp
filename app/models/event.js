@@ -11,9 +11,13 @@ export default DS.Model.extend({
   userEvents: DS.hasMany('user-event'),
   comments: DS.hasMany('comment'),
   shortDate: function(){
-    return this.get('date').toDateString();
+    if (this.get('date') !== undefined){
+      return this.get('date').toDateString();
+    }
   }.property('date'),
   time: function(){
-    return this.get('date').toTimeString().split(':').slice(0,2).join(':');
+    if (this.get('date') !== undefined){
+      return this.get('date').toTimeString().split(':').slice(0,2).join(':');
+    }
   }.property('date')
 });

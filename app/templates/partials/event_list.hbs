@@ -2,7 +2,9 @@
 {{#each}}
     {{#link-to 'event' this}}
       <li>
-        {{name}}
+        <strong>{{name}}</strong><br/>
+        Date: {{shortDate}}<br/>
+        Time: {{time}}
         {{#if session.content.user}}
           {{#if firstCurrentUserEvent.attending}}
             <button {{action 'leave'}} class='list-join-leave-button'>Leave!</button>
