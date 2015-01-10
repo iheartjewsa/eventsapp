@@ -10,6 +10,9 @@ export default DS.Model.extend({
   addressline3: DS.attr('string'),
   userEvents: DS.hasMany('user-event'),
   comments: DS.hasMany('comment'),
+  sortedComments: function(){
+    return this.get('comments').sortBy('createdAt');
+  }.property('comments'),
   shortDate: function(){
     if (this.get('date') !== undefined){
       return this.get('date').toDateString();

@@ -1,38 +1,56 @@
-{{#link-to 'events'}}Back{{/link-to}}
-<br/>
-Hi, this event is: {{name}}<br/>
-{{description}}<br/>
-{{shortDate}}<br/>
-{{time}}<br/>
-{{place}}<br/>
-{{addressline1}}<br/>
-{{addressline2}}<br/>
-{{addressline3}}<br/>
+<p>{{#link-to 'events'}}Back{{/link-to}}</p>
+<h4>{{name}}</h4>
+<p>{{description}}</p>
+<table class='event-details'>
+  <tr>
+    <td>Date:</td><td>{{shortDate}}</td>
+  </tr>
+  <tr>
+    <td>Time:</td><td>{{time}}</td>
+  </tr>
+  <tr>
+    <td>Place:</td><td>{{place}}</td>
+  </tr>
+  <tr>
+    <td>Address:</td><td>{{addressline1}}</td>
+  </tr>
+  <tr>
+    <td></td><td>{{addressline2}}</td>
+  </tr>
+  <tr>
+    <td></td><td>{{addressline3}}</td>
+  </tr>
+</table>
+
 {{#if session.content.user}}
-
+  <p>
   {{#if firstCurrentUserEvent.attending}}
-    You are attending!<br/>
-
-    <button {{action 'leave'}}>Leave!</button>
+    You are attending!
+    <button {{action 'leave'}} class='list-join-leave-button'>Leave!</button>
   {{else}}
-    <button {{action 'join'}}>Join!</button>
+    You're not attending.
+    <button {{action 'join'}} class='list-join-leave-button'>Join!</button>
   {{/if}}
-
-  Wanna comment?
-  {{textarea value=commentText rows="6"}}
+  </p>
+  <p>
+  Comment:
+  {{textarea class='comment-box' value=commentText rows="3"}}
   <button {{action 'comment'}}>Comment</button>
-  <br/>
+  </p>
 
 {{else}}
-  You must be logged in to join the event or comment:
-  {{#link-to 'signup' class='signup-button'}}Signup{{/link-to}}
-  {{#link-to 'login' class='login-button'}}Login{{/link-to}}
-  <br/>
+  <p>
+    You must be logged in to join the event or comment:
+    {{#link-to 'signup' class='link-button'}}Signup{{/link-to}}
+    {{#link-to 'login' class='link-button'}}Login{{/link-to}}
+  </p>
 {{/if}}
-
-<br/>
-
-Comments:<br/>
-{{#each comment in comments}}
-Comment by {{comment.parseUser.username}}: {{comment.text}} <br/>
-{{/each}}
+<em>Comments:</em>
+<table class='comments'>
+  {{#each comment in sortedComments}}
+    <tr>
+      <td class='comment-name-cell'><div>{{comment.parseUser.username}}</div><div class='comment-date'>{{comment.createdShortDate}} {{comment.createdTime}}</div></td>
+      <td class='comment-text-cell'>{{comment.text}}</td>
+    </tr>
+  {{/each}}
+</table>

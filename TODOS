@@ -1,5 +1,4 @@
-improve style/layout of events page, and display extra attributes like place and time in a list
-improve style/layout of event page
+login/signup pages check
 add security to parse for:
   events: read only by everyone
   event: read only by everyone
@@ -21,3 +20,5 @@ photos
 notifications
 ....check more on paper
 ...cordova/app store
+do something with past events
+check event sorting

@@ -7,9 +7,9 @@
         Time: {{time}}
         {{#if session.content.user}}
           {{#if firstCurrentUserEvent.attending}}
-            <button {{action 'leave'}} class='list-join-leave-button'>Leave!</button>
+            <button {{action 'leave'}} class='list-button'>Leave!</button>
           {{else}}
-            <button {{action 'join'}} class='list-join-leave-button'>Join!</button>
+            <button {{action 'join'}} class='list-button'>Join!</button>
           {{/if}}
         {{/if}}
       </li>

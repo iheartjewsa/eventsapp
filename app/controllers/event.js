@@ -36,6 +36,7 @@ export default Ember.ObjectController.extend({
         parseUser: this.get('store').getById('parseUser', this.get('session.user.id')),
         text: commentText
       });
+      this.set('commentText','');
       this.send('saveComment', comment);
     }
   }

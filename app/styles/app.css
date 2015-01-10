@@ -23,8 +23,13 @@ h2 {
   font-size: 3.5em;
 }
 
-.login-button,
-.signup-button {
+.comment-box{
+  margin-bottom: 5px;
+}
+
+.link-button,
+button {
+  font-size: 16px;
   background-color: #4acaa8;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   border-radius: 5px;
@@ -39,17 +44,46 @@ h2 {
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
+  width: 90px;
 }
 
-.login-button:hover,
-.signup-button:hover {
+.link-button:hover,
+button:hover {
   background-color: #5ed0b1;
   color: #ffffff !important;
 }
-.login-button:active,
-.signup-button:active {
+
+.link-button:active,
+ button:active {
   background-color: #39c29d;
   color: #ffffff !important;
+}
+
+.list-button {
+  float: right;
+  margin-right: 20px;
+  margin-top: -21px;
+}
+
+.comment-date{
+  font-size: 11px;
+}
+
+.comment-name-cell {
+  width: 30%;
+}
+
+.comment-text-cell {
+  width: 70%;
+}
+
+.event-list {
+  padding-left: 0px;
+}
+
+.event-details td,
+.comments td {
+  padding: 0.1em 0.75em;
 }
 
 .event-list > a > li {
@@ -63,32 +97,6 @@ h2 {
 
 .event-list > a > li:hover {
   background-color: rgba(74, 202, 168, 0.28);
-  color: #888;
-}
-
-.list-join-leave-button {
-  float: right;
-  margin-right: 20px;
-  margin-top: -21px;
-  background-color: #4acaa8;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  border-radius: 5px;
-  border: 0;
-  color: #ffffff !important;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 700;
-  height: 2.6em;
-  padding-left: 0 1.5em;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  font-size: 18px;
-  width: 90px;
-}
-
-.list-join-leave-button:hover {
-  background-color: rgba(66, 168, 141, 1);
   color: #888;
 }
 
