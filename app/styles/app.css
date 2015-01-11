@@ -2,6 +2,24 @@ html, body {
   margin: 0px;
 }
 
+#mobile-nav > ul {
+  margin-top: 18px;
+  padding: 0px;
+  list-style-type: none;
+  font-size: 20px;
+  height: 70px;
+}
+
+#mobile-nav a:hover {
+  color: inherit !important;
+  border-bottom-color: inherit;
+}
+
+#mobile-nav a:active {
+  border-bottom-color: transparent;
+  color: #527C72 !important;
+}
+
 body, input, select, textarea {
   color: #888;
   font-family: "Lato", sans-serif;
@@ -163,7 +181,17 @@ button:hover {
   text-overflow: ellipsis;
 }
 
-.event-list > a > li:hover {
+.no-touch .event-list > a > li:hover {
+  background-color: rgba(74, 202, 168, 0.28);
+  color: #888;
+}
+
+.no-touch .event-list > a > li:active {
+  background-color: rgba(10, 183, 137, 0.28);
+  color: #888;
+}
+
+.touch .event-list > a > li:active {
   background-color: rgba(74, 202, 168, 0.28);
   color: #888;
 }
