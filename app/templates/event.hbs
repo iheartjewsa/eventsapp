@@ -26,16 +26,16 @@
   <p>
   {{#if firstCurrentUserEvent.attending}}
     You are attending!
-    <button {{action 'leave'}} class='list-join-leave-button'>Leave!</button>
+    <button {{action 'leave'}}>Leave!</button>
   {{else}}
     You're not attending.
-    <button {{action 'join'}} class='list-join-leave-button'>Join!</button>
+    <button {{action 'join'}}>Join!</button>
   {{/if}}
   </p>
   <p>
   Comment:
   {{textarea class='comment-box' value=commentText rows="3"}}
-  <button {{action 'comment'}}>Comment</button>
+  <button {{action 'comment'}} class='comment-button'>Comment</button>
   </p>
 
 {{else}}
