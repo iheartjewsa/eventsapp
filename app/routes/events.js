@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ResetScrollMixin from 'eventsapp/mixins/reset_scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScrollMixin, {
   model: function(){
     return this.get('store').find('event');
   },
