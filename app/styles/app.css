@@ -28,6 +28,9 @@ body, input, select, textarea {
   line-height: 1.75em;
 }
 
+textarea {
+  width: 95% !important;
+}
 
 p {
   margin: 0 0 2.25em 0;
