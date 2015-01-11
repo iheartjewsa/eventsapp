@@ -5,23 +5,22 @@
 </div>
 <div class="row">
   <div class="small-12 columns">
-    <button>Signup with Facebook!...still to do</button>
     <form>
-      <div>
+      <p>
         <label for="username">Name</label>
         {{input value=username id="username" placeholder="Enter a username..."}}
-      </div>
-      <div>
+      </p>
+      <p>
         <label for="password">Password</label>
         {{input value=password type='password' id="password" placeholder="Enter a username..."}}
-      </div>
-      <div>
+      </p>
+      <p>
         <label for="email">Email</label>
         {{input value=email id="email" placeholder="Enter your email..."}}
-      </div>
-      <div>
+      </p>
+      <p>
         <button {{action 'signup'}}>Sign up!</button>
-      </div>
+      </p>
     {{#if signupMessage}}
       <div data-alert class="alert-box warning radius">
         <p>{{signupMessage}}</p>

@@ -5,19 +5,18 @@
     </div>
     <div class="row">
       <div class="small-12 columns">
-        <button>Login with Facebook!...still to do</button>
           <form {{action 'authenticate' on='submit'}}>
-            <div>
+            <p>
               <label for="identification">Name</label>
               {{input value=identification placeholder="Enter login..."}}
-            </div>
-            <div>
+            </p>
+            <p>
               <label for="password">Password</label>
               {{input value=password type='password' placeholder="Enter password..."}}
-            </div>
-            <div>
+            </p>
+            <p>
              <button type="submit">Login</button>
-            </div>
+            </p>
             {{#if loginErrorMessage}}
               <div data-alert class="alert-box warning radius">
                 <p>{{loginErrorMessage}}</p>
