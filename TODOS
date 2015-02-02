@@ -1,13 +1,13 @@
-login with fb
 add security to parse for:
-  events: read only by everyone
-  event: read only by everyone
-  userevent: read only by user only, no one else
-  eventComments: read only by everyone
+  events: read:*, write: admin
+  event: read:*, write:admin
+  userevent: read: user, admin, write: user
   userevent: create/change only for/by user for themself
-  eventcomment: create/edit/delete only for user themself
-look into backup type stuff
-make logo smaller pic
+  eventcomment: read: *, write: user themself, mods
+  (basically, just write permissions into acl field whenever creating a row, i think...so, for events, tell adam, for new users/comments/userevents, code it to do so)
+
+  parse users, user list, num users, user emails, other attributes... data made private? (probably just go with user only read/write on user table, and duplicate username in comments table)
+
 ....check more on paper
 
 do with adam:
@@ -17,10 +17,23 @@ clear data store and add real events
 email current mail list with event and signup info
 
 do maybe, or after:
+login with fb
 photos
 notifications
-...cordova/app store
 do something with past events
-check event sorting
 ajax save spinners
 loading/route spinners
+
+do after:
+...cordova/app store
+check event sorting
+
+
+NOTES
+show comment box before login
+think more about sorting on events page
+add contact page
+split events into iheartjew vs other community
+have links on left for different event sections
+
+iheartjewsa@gmail.com
