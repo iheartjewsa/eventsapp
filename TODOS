@@ -1,3 +1,5 @@
+DO FREE
+
 add security to parse for:
   events: read:*, write: admin
   event: read:*, write:admin
@@ -6,28 +8,16 @@ add security to parse for:
   eventcomment: read: *, write: user themself, mods
   (basically, just write permissions into acl field whenever creating a row, i think...so, for events, tell adam, for new users/comments/userevents, code it to do so)
 
+  table-level permissions for all tables
+  remove App Permissions - Allow client class creation 
+  
   parse users, user list, num users, user emails, other attributes... data made private? (probably just go with user only read/write on user table, and duplicate username in comments table)
 
 ....check more on paper
 
-do with adam:
-fix facebook/email links
-deploy!
-clear data store and add real events
-email current mail list with event and signup info
-
-do maybe, or after:
-login with fb
 photos
 notifications
-do something with past events
-ajax save spinners
-loading/route spinners
-
-do after:
-...cordova/app store
-check event sorting
-
+login with fb
 
 NOTES
 show comment box before login
@@ -37,3 +27,15 @@ split events into iheartjew vs other community
 have links on left for different event sections
 
 iheartjewsa@gmail.com
+
+deploy!
+clear data store and add real events
+email current mail list with event and signup info
+
+after:
+do something with past events
+ajax save spinners
+loading/route spinners
+...cordova/app store
+check event sorting
+polls
