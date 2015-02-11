@@ -11,9 +11,18 @@ export default Ember.ObjectController.extend({
     join: function(){
       var userEvent;
       if(!this.get('firstCurrentUserEvent')){
+        var userEventACL = {
+            "*": {
+              "read": true
+            }
+          };
+        userEventACL[this.get('session.user.id')] = {
+          write: true
+        };
         userEvent = this.store.createRecord('userEvent', {
           event: this.get('model'),
-          parseUser: this.get('store').getById('parseUser', this.get('session.user.id'))
+          parseUser: this.get('store').getById('parseUser', this.get('session.user.id')),
+          ACL: userEventACL
         });
       }
       else{
