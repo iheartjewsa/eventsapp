@@ -1,10 +1,10 @@
 DO FREE
 
 add security to parse for:
-  events: read:*, write: admin
-  event: read:*, write:admin
-  userevent: read: user, admin, write: user
-  userevent: create/change only for/by user for themself
+  DONE TABLE LEVEL: events: read:*, write: admin
+  DONE TABLE LEVEL: event: read:*, write:admin
+  DONE userevent: read: all, admin, write: user
+  DONE userevent: create/change only for/by user for themself
   eventcomment: read: *, write: user themself, mods
   (basically, just write permissions into acl field whenever creating a row, i think...so, for events, tell adam, for new users/comments/userevents, code it to do so)
 
@@ -31,6 +31,7 @@ iheartjewsa@gmail.com
 deploy!
 clear data store and add real events
 email current mail list with event and signup info
+tell adam about read/write permissions on parse, ie, user and userevent can be read for now.
 
 after:
 do something with past events
