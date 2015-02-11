@@ -14,5 +14,8 @@ export default DS.Model.extend({
     if (this.get('createdAt') !== undefined){
       return this.get('createdAt').toTimeString().split(':').slice(0,2).join(':');
     }
-  }.property('createdAt')
+  }.property('createdAt'),
+  parseClassName: function(){
+    return 'Comment'
+  }
 });

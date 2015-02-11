@@ -4,5 +4,8 @@ export default DS.Model.extend({
   event: DS.belongsTo('event'),
   parseUser: DS.belongsTo('parse-user'),
   attending: DS.attr('boolean'),
-  ACL: DS.attr()
+  ACL: DS.attr(),
+  parseClassName: function(){
+    return 'UserEvent'
+  }
 });
