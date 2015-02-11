@@ -40,10 +40,19 @@ export default Ember.ObjectController.extend({
     },
     comment: function(){
       var commentText = this.get('commentText');
+      var commentACL = {
+          "*": {
+            "read": true
+          }
+        };
+      commentACL[this.get('session.user.id')] = {
+        write: true
+      };
       var comment = this.store.createRecord('comment',{
         event: this.get('model'),
         parseUser: this.get('store').getById('parseUser', this.get('session.user.id')),
-        text: commentText
+        text: commentText,
+        ACL: commentACL
       });
       this.set('commentText','');
       this.send('saveComment', comment);

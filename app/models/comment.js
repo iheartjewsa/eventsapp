@@ -15,6 +15,7 @@ export default DS.Model.extend({
       return this.get('createdAt').toTimeString().split(':').slice(0,2).join(':');
     }
   }.property('createdAt'),
+  ACL: DS.attr(),
   parseClassName: function(){
     return 'Comment'
   }
