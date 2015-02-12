@@ -4,6 +4,8 @@ import Ember from 'ember';
 export default Base.extend({
   restore: function(data) {
     this.store.push('parseUser', data.user);
+    var adapter = this.container.lookup('adapter:application');
+    adapter.set('sessionToken', data.user.sessionToken);
     return new Ember.RSVP.Promise(function(resolve, reject) {
         resolve(data);
       });
@@ -18,6 +20,8 @@ export default Base.extend({
     return new Ember.RSVP.Promise(function(resolve, reject) {
       ParseUser.login(self.store, data).then(
         function(user){
+          var adapter = self.container.lookup('adapter:application');
+          adapter.set('sessionToken', user.get('sessionToken'));
           resolve({
             user: user
           });
@@ -27,8 +31,11 @@ export default Base.extend({
       });
   },
   invalidate: function(data) {
+    var self = this;
     return new Ember.RSVP.Promise(function(resolve, reject) {
       data.user = undefined;
+      var adapter = self.container.lookup('adapter:application');
+      adapter.set('sessionToken', '');
       resolve();
     });
   }

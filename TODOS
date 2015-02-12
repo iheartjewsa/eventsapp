@@ -5,13 +5,9 @@ add security to parse for:
   DONE TABLE LEVEL: event: read:*, write:admin
   DONE userevent: read: all, admin, write: user
   DONE userevent: create/change only for/by user for themself
-  eventcomment: read: *, write: user themself, mods
-  (basically, just write permissions into acl field whenever creating a row, i think...so, for events, tell adam, for new users/comments/userevents, code it to do so)
+  DONE eventcomment: read: *, write: user themself, mods
 
-  table-level permissions for all tables
-  remove App Permissions - Allow client class creation 
-  
-  parse users, user list, num users, user emails, other attributes... data made private? (probably just go with user only read/write on user table, and duplicate username in comments table)
+  parse users, user list, num users, user emails, other attributes... data made private? (probably just go with user only read/write on user table, and duplicate username in comments table...hacker can still see number of users via get all user_events and then dedupe)
 
 ....check more on paper
 
@@ -31,7 +27,7 @@ iheartjewsa@gmail.com
 deploy!
 clear data store and add real events
 email current mail list with event and signup info
-tell adam about read/write permissions on parse, ie, user and userevent can be read for now.
+tell adam about read/write permissions on parse, ie, user and userevent can be read for now. and about acls when creating using parse UI
 
 after:
 do something with past events
