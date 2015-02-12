@@ -6,6 +6,6 @@ export default DS.Model.extend({
   attending: DS.attr('boolean'),
   ACL: DS.attr(),
   parseClassName: function(){
-    return 'UserEvent'
+    return 'UserEvent';
   }
 });

@@ -17,6 +17,6 @@ export default DS.Model.extend({
   }.property('createdAt'),
   ACL: DS.attr(),
   parseClassName: function(){
-    return 'Comment'
+    return 'Comment';
   }
 });
