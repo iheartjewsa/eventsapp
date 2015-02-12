@@ -11,7 +11,11 @@ export default DS.Model.extend({
   userEvents: DS.hasMany('user-event'),
   comments: DS.hasMany('comment'),
   sortedComments: function(){
-    return this.get('comments').sortBy('createdAt');
+    var newComments = this.get('comments').filterBy('createdAt', undefined);
+    var oldComments = this.get('comments').filter(function(comment){
+      return comment.get('createdAt') !== undefined;
+    });
+    return newComments.concat(oldComments.sortBy('createdAt').reverse());
   }.property('comments'),
   shortDate: function(){
     if (this.get('date') !== undefined){

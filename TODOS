@@ -7,11 +7,8 @@ add security to parse for:
   DONE userevent: create/change only for/by user for themself
   DONE eventcomment: read: *, write: user themself, mods
 
-  parse users, user list, num users, user emails, other attributes... data made private? (probably just go with user only read/write on user table, and duplicate username in comments table...hacker can still see number of users via get all user_events and then dedupe)
-
 ....check more on paper
 
-comment sorting
 photos
 notifications
 login with fb
@@ -28,7 +25,8 @@ iheartjewsa@gmail.com
 deploy!
 clear data store and add real events
 email current mail list with event and signup info
-tell adam about read/write permissions on parse, ie, user and userevent can be read for now. and about acls when creating using parse UI
+tell adam about read/write permissions on parse, ie, event, userevent, comment can be read for now. and about acls when creating using parse UI
+tell adam hacker can still see number of users via get all user_events and then dedupe
 
 after:
 eek dev vs production data
