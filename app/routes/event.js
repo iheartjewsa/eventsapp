@@ -39,15 +39,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
       },
       include: 'parseUser'
     });
-    return Ember.RSVP.all([currentUserEventPromise, eventComments]).then(function(results){
-      return results[1].store.find('parseUser', {
-        where: {
-          objectId: {
-            '$in': results[1].mapBy('data.parseUser.id').uniq()
-          }
-        }
-      });
-    });
+    return Ember.RSVP.all([currentUserEventPromise, eventComments]);
   },
   actions: {
     saveUserEvent: function(userEvent){

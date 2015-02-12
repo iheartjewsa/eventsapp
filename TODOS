@@ -11,6 +11,7 @@ add security to parse for:
 
 ....check more on paper
 
+comment sorting
 photos
 notifications
 login with fb
@@ -30,6 +31,7 @@ email current mail list with event and signup info
 tell adam about read/write permissions on parse, ie, user and userevent can be read for now. and about acls when creating using parse UI
 
 after:
+eek dev vs production data
 do something with past events
 ajax save spinners
 loading/route spinners

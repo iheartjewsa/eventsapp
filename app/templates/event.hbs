@@ -50,7 +50,7 @@
   <tbody>
   {{#each comment in sortedComments}}
     <tr>
-      <td class='comment-name-cell'><div>{{comment.parseUser.username}}</div><div class='comment-date'>{{comment.createdShortDate}} {{comment.createdTime}}</div></td>
+      <td class='comment-name-cell'><div>{{comment.userName}}</div><div class='comment-date'>{{comment.createdShortDate}} {{comment.createdTime}}</div></td>
       <td class='comment-text-cell'>{{comment.text}}</td>
     </tr>
   {{/each}}

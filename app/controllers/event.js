@@ -51,6 +51,7 @@ export default Ember.ObjectController.extend({
       var comment = this.store.createRecord('comment',{
         event: this.get('model'),
         parseUser: this.get('store').getById('parseUser', this.get('session.user.id')),
+        userName: this.get('store').getById('parseUser', this.get('session.user.id')).get('username'),
         text: commentText,
         ACL: commentACL
       });

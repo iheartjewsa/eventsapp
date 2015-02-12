@@ -3,6 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   event: DS.belongsTo('event'),
   parseUser: DS.belongsTo('parse-user'),
+  userName: DS.attr('string'),
   text: DS.attr('string'),
   createdAt: DS.attr('date'),
   createdShortDate: function(){
