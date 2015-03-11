@@ -8,6 +8,7 @@ export default DS.Model.extend({
   addressline1: DS.attr('string'),
   addressline2: DS.attr('string'),
   addressline3: DS.attr('string'),
+  ticketLink: DS.attr('string'),
   userEvents: DS.hasMany('user-event'),
   comments: DS.hasMany('comment'),
   sortedComments: function(){

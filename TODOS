@@ -1,17 +1,15 @@
 DO FREE
 
-add security to parse for:
-  DONE TABLE LEVEL: events: read:*, write: admin
-  DONE TABLE LEVEL: event: read:*, write:admin
-  DONE userevent: read: all, admin, write: user
-  DONE userevent: create/change only for/by user for themself
-  DONE eventcomment: read: *, write: user themself, mods
-
 ....check more on paper
 
 photos
 notifications
 login with fb
+buy ticket link
+
+security:
+can create comments that are not own
+can create userevents that are not own
 
 NOTES
 show comment box before login
@@ -20,13 +18,9 @@ add contact page
 split events into iheartjew vs other community
 have links on left for different event sections
 
-iheartjewsa@gmail.com
-
 deploy!
 clear data store and add real events
 email current mail list with event and signup info
-tell adam about read/write permissions on parse, ie, event, userevent, comment can be read for now. and about acls when creating using parse UI
-tell adam hacker can still see number of users via get all user_events and then dedupe
 
 after:
 eek dev vs production data
