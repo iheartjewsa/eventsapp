@@ -39,7 +39,17 @@ export default Ember.Route.extend(ResetScrollMixin, {
       },
       include: 'parseUser'
     });
-    return Ember.RSVP.all([currentUserEventPromise, eventComments]);
+    var eventPhotos = this.get('store').find('photo', {
+      where: {
+        event: {
+          "__type":  "Pointer",
+          "className": "Event",
+          "objectId": model.get('id')
+        }
+      },
+      include: 'parseUser'
+    });
+    return Ember.RSVP.all([currentUserEventPromise, eventComments, eventPhotos]);
   },
   actions: {
     saveUserEvent: function(userEvent){

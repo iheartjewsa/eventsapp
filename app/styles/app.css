@@ -40,6 +40,44 @@ p {
   margin: 0 0 2.25em 0;
 }
 
+.photo-block {
+  float: left;
+  padding: 1px;
+  border: solid 2px transparent;
+  border-radius: 10px;
+}
+
+.photo-block:hover {
+  padding: 1px;
+  border: solid 2px rgba(136, 136, 136, 0.27);
+  background-color: rgba(74, 202, 168, 0.54);
+}
+
+.photo-thumbnail {
+  border-radius: 20px;
+  width: 202px;
+  height: 202px;
+  background-position: 50% 25%;
+  background-size: cover;
+  display: block;
+  margin: 3px;
+  border-bottom-color: inherit;
+}
+
+.event-photos {
+  width: 100%;
+  text-align:left;
+  display:inline-block;
+  background-color: rgba(74, 202, 168, 0.27);
+}
+
+.more-photos-line{
+  text-align: right;
+  font-size: 18px;
+  background-color: rgba(74, 202, 168, 0.27);
+  margin-top: -11px;
+}
+
 #header {
   width: 25%;
   min-width: 15em;

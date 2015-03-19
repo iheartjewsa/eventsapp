@@ -57,6 +57,9 @@ export default Ember.ObjectController.extend({
       });
       this.set('commentText','');
       this.send('saveComment', comment);
+    },
+    morePhotos: function(){
+      this.set('numPhotosToShow', this.get('numPhotosToShow')+12);
     }
   }
 });

@@ -11,6 +11,16 @@ export default DS.Model.extend({
   ticketLink: DS.attr('string'),
   userEvents: DS.hasMany('user-event'),
   comments: DS.hasMany('comment'),
+  photos: DS.hasMany('photo'),
+  numPhotosToShow: 4,
+  shownPhotos: function(){
+    return this.get('photos').slice(0,this.get('numPhotosToShow'));
+  }.property('photos.[]', 'photos.@each.url', 'numPhotosToShow'),
+  noPhotos: Ember.computed.empty('photos'),
+  showMorePhotosButton: function(){
+    return (this.get('photos.length') >= 4) &&
+      (this.get('numPhotosToShow') <= this.get('photos.length'));
+  }.property('numPhotosToShow', 'photos.[]'),
   sortedComments: function(){
     var newComments = this.get('comments').filterBy('createdAt', undefined);
     var oldComments = this.get('comments').filter(function(comment){

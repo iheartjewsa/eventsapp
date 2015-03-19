@@ -35,8 +35,8 @@ module.exports = function(environment) {
       'script-src': "'self'",
       'font-src': "'self'",
       'connect-src': "'self' https://api.parse.com",
-      'img-src': "'self'",
-      'style-src': "'self'",
+      'img-src': "'self' www.facebook.com fbcdn.net scontent-b-lhr.xx.fbcdn.net *.akamaihd.net",
+      'style-src': "'self' www.facebook.com fbcdn.net scontent-b-lhr.xx.fbcdn.net *.akamaihd.net",
       'media-src': "'self'"
     }
   };
@@ -52,8 +52,8 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-eval'",
       'font-src': "'self'",
       'connect-src': "'self' https://api.parse.com",
-      'img-src': "'self'",
-      'style-src': "'self'",
+      'img-src': "'self' www.facebook.com *.fbcdn.net scontent-b-lhr.xx.fbcdn.net *.akamaihd.net",
+      'style-src': "'self' www.facebook.com *.fbcdn.net scontent-b-lhr.xx.fbcdn.net *.akamaihd.net",
       'media-src': "'self'"
     };
   }

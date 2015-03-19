@@ -1,6 +1,22 @@
 <p>{{#link-to 'events'}}Back{{/link-to}}</p>
 <h4>{{name}}</h4>
-<p>{{description}}</p>
+{{#if description}}
+  <p>{{description}}</p>
+{{/if}}
+{{#unless noPhotos}}
+<div class='event-photos'>
+  {{#each shownPhotos}}
+  <div class='photo-block'>
+    <a {{bind-attr href='url' style='background'}} target="_blank" class='photo-thumbnail'></a>
+  </div>
+  {{/each}}
+</div>
+{{#if showMorePhotosButton}}
+<div class="more-photos-line">
+  <a href="javascript:" {{action 'morePhotos'}}>More Photos...</a>
+</div
+{{/if}}
+{{/unless}}
 <table class='event-details'>
   <tr>
     <td>Date:</td><td>{{shortDate}}</td>
