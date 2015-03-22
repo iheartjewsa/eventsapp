@@ -36,9 +36,11 @@
   <tr>
     <td></td><td>{{addressline3}}</td>
   </tr>
+{{#if ticketLink}}
   <tr>
     <td><strong><a {{bind-attr href=ticketLink}} target='_blank'>Buy Ticket!</a></strong></td></td><td></td>
   </tr>
+{{/if}}
 </table>
 
 {{#if session.content.user}}
