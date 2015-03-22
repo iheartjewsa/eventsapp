@@ -14,6 +14,7 @@ export default DS.Model.extend({
   comments: DS.hasMany('comment'),
   photos: DS.hasMany('photo'),
   numPhotosToShow: 4,
+  eventInFuture: Ember.computed.gte('date', Date.now()),
   shownPhotos: function(){
     return this.get('photos').slice(0,this.get('numPhotosToShow'));
   }.property('photos.[]', 'photos.@each.url', 'numPhotosToShow'),

@@ -42,15 +42,17 @@
 </table>
 
 {{#if session.content.user}}
-  <p>
-  {{#if firstCurrentUserEvent.attending}}
-    You are attending!
-    <button {{action 'leave'}}>Leave!</button>
-  {{else}}
-    You're not attending.
-    <button {{action 'join'}}>Join!</button>
+  {{#if eventInFuture}}
+    <p>
+    {{#if firstCurrentUserEvent.attending}}
+      You are attending!
+      <button {{action 'leave'}}>Leave!</button>
+    {{else}}
+      You're not attending.
+      <button {{action 'join'}}>Join!</button>
+    {{/if}}
+    </p>
   {{/if}}
-  </p>
   <p>
   Comment:
   {{textarea class='comment-box' value=commentText rows="3"}}
