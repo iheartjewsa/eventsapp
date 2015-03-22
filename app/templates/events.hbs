@@ -4,26 +4,41 @@
 
 {{#if session.content.user}}
   {{#if currentUserNotIndicatedEvents}}
-    <h4>New events:</h4>
+    <h4>Upcoming new events:</h4>
     {{#with currentUserNotIndicatedEvents}}
       {{partial 'partials/event-list'}}
     {{/with}}
   {{/if}}
 
   {{#if currentUserAttendingEvents}}
-    <h4>Events you're going to:</h4>
+    <h4>Upcoming events you're going to:</h4>
     {{#with currentUserAttendingEvents}}
       {{partial 'partials/event-list'}}
     {{/with}}
   {{/if}}
 
   {{#if currentUserNotAttendingEvents}}
-    <h4>Events you're not going to:</h4>
+    <h4>Upcoming events you're not going to:</h4>
     {{#with currentUserNotAttendingEvents}}
       {{partial 'partials/event-list'}}
     {{/with}}
   {{/if}}
 
+  {{#if pastEvents}}
+    <h4>Past Events:</h4>
+    {{#with pastEvents}}
+      {{partial 'partials/event-list'}}
+    {{/with}}
+  {{/if}}
+
 {{else}}
-  {{partial 'partials/event-list'}}
+  {{#with upcomingEvents}}
+    <h4>Upcoming events:</h4>
+    {{partial 'partials/event-list'}}
+  {{/with}}
+
+  {{#with pastEvents}}
+    <h4>Past Events:</h4>
+    {{partial 'partials/event-list'}}
+  {{/with}}
 {{/if}}

@@ -4,20 +4,36 @@ export default Ember.ArrayController.extend({
   needs: 'event',
   itemController: 'event',
   dateSorting: ['date'],
-  upcomingEvents: Ember.computed.sort('model', 'dateSorting'),
+  sortedEvents: Ember.computed.sort('model', 'dateSorting'),
   setTopUpcomingEvents: function(){
-    this.set('topUpcomingEvents', this.sortBy('date').slice(0,3));
+    var topUpcomingEvents;
+    if (this.get('upcomingEvents')){
+      topUpcomingEvents = this.get('upcomingEvents').sortBy('date').slice(0,3);
+    }
+    this.set('topUpcomingEvents', topUpcomingEvents);
   },
   setcurrentUserAttendingEvents: function(){
-    this.set('currentUserAttendingEvents', this.filterBy('firstCurrentUserEvent.attending', true));
+    this.set('currentUserAttendingEvents', this.get('upcomingEvents').filterBy('firstCurrentUserEvent.attending', true));
   },
   setcurrentUserNotAttendingEvents: function(){
-    this.set('currentUserNotAttendingEvents', this.filterBy('firstCurrentUserEvent.attending', false));
+    this.set('currentUserNotAttendingEvents', this.get('upcomingEvents').filterBy('firstCurrentUserEvent.attending', false));
   },
   setcurrentUserNotIndicatedEvents: function(){
-    this.set('currentUserNotIndicatedEvents', this.filterBy('firstCurrentUserEvent', undefined));
+    this.set('currentUserNotIndicatedEvents', this.get('upcomingEvents').filterBy('firstCurrentUserEvent', undefined));
+  },
+  setPastEvents: function(){
+    this.set('pastEvents', this.get('sortedEvents').filter(function(event){
+      return event.get('date') < Date.now();
+    }));
+  },
+  setUpcomingEvents: function(){
+    this.set('upcomingEvents', this.get('sortedEvents').filter(function(event){
+      return event.get('date') >= Date.now();
+    }));
   },
   resetEventGroups: function(){
+    this.setUpcomingEvents();
+    this.setPastEvents();
     this.setcurrentUserAttendingEvents();
     this.setcurrentUserNotAttendingEvents();
     this.setcurrentUserNotIndicatedEvents();

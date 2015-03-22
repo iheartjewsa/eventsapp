@@ -20,9 +20,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
   },
   setupController: function(controller, model){
     controller.set('model', model);
-    if (this.get('session.content.user') !== undefined){
-      controller.resetEventGroups();
-    }
+    controller.resetEventGroups();
     controller.setTopUpcomingEvents();
   },
   actions:{
