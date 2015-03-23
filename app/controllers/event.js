@@ -48,11 +48,13 @@ export default Ember.ObjectController.extend({
                   processData: false,
                   contentType: false,
                   success: function(data) {
+                    var file = new EmberParseAdapter.File(data.name, data.url);
                     var photo = eventController.store.createRecord('photo', {
                       event: eventController.model,
                       parseUser: eventController.get('store').getById('parseUser', eventController.get('session.user.id')),
                       userName: eventController.get('session.user.username'),
                       url: data.url,
+                      parseFile: file,
                       ACL: userPhotoACL
                     });
                     photo.save().then(function(){

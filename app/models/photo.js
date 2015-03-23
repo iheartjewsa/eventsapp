@@ -5,6 +5,7 @@ export default DS.Model.extend({
   parseUser: DS.belongsTo('parse-user'),
   userName: DS.attr('string'),
   url: DS.attr('string'),
+  parseFile: DS.attr('parse-file'),
   background: function(){
     return 'background-image: url(' + this.get('url') + ');';
   }.property('url'),
