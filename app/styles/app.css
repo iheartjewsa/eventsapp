@@ -47,6 +47,11 @@ p {
   border-radius: 10px;
 }
 
+#photo-button {
+  width: inherit;
+  font-size: 18px;
+}
+
 .photo-block:hover {
   padding: 1px;
   border: solid 2px rgba(136, 136, 136, 0.27);

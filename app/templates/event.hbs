@@ -56,6 +56,12 @@
     </p>
   {{/if}}
   <p>
+     Add Photos: <br/>
+     <input type="file" id="files" name="files[]" multiple /><br/>
+     <button {{action 'uploadFiles' this}}>Upload!</button>
+     {{uploadStatus}}
+  </p>
+  <p>
   Comment:
   {{textarea class='comment-box' value=commentText rows="3"}}
   <button {{action 'comment'}} class='comment-button'>Comment</button>

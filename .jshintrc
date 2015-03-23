@@ -3,7 +3,8 @@
     "document",
     "window",
     "-Promise",
-    "EmberParseAdapter"
+    "EmberParseAdapter",
+    "$"
   ],
   "browser" : true,
   "boss" : true,
